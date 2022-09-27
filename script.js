@@ -1,14 +1,12 @@
-/*jshint esversion: 6 */
+/*jshint esversion: 8 */
 const img = document.querySelector("img");
 
-fetch(
-  "https://api.giphy.com/v1/gifs/translate?api_key=YN2xoWfsQ3CjewKOD7Tq0bXSpc1m8TB3&s=cats",
-  { mode: "cors" }
-)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (response) {
-    link = response.data.images.original.url;
-    img.src = link;
-  });
+async function getCats() {
+  const response = await fetch(
+    "https://api.giphy.com/v1/gifs/translate?api_key=YN2xoWfsQ3CjewKOD7Tq0bXSpc1m8TB3&s=cats",
+    { mode: "cors" }
+  );
+  const catData = await response.json();
+  img.src = catData.data.images.original.url;
+}
+getCats();

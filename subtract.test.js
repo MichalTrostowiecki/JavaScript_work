@@ -3,5 +3,5 @@
 const name = require("./subtract");
 
 test("Return true", () => {
-  expect(name).toBeTruthy();
+  expect(name()).toBeFalsy();
 });

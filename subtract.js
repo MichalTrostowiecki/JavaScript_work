@@ -1,8 +1,10 @@
 /*jshint esversion: 8 */
 
 function name() {
-  const name = true;
-  if (name) {
+  const name1 = true;
+  if (name1) {
+    return false;
+  } else {
     return true;
   }
 }
